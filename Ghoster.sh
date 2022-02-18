@@ -1,7 +1,5 @@
 #!/bin/bash
-RCol='\e[0m'    
 BBlu='\e[1;34m';
-
 
 Full_Scan () {
     echo "Please enter the port to scan!"
@@ -29,6 +27,11 @@ Full_Scan () {
     if grep -q '80/tcp' "$dire/nmap.txt"; then
         echo -e "\nPerforming directory bruteforce for webserver!"
         gobuster dir -u "http://$ip" -w /usr/share/wordlists/dirbuster/directory-list-2.3-small.txt >  "$dire/gobuster.txt"
+    fi
+    
+    if grep -q '8080/tcp' "$dire/nmap.txt"; then
+        echo -e "\nPerforming directory bruteforce for webserver!"
+        gobuster dir -u "http://$ip:8080" -w /usr/share/wordlists/dirbuster/directory-list-2.3-small.txt >  "$dire/gobuster.txt"
     fi
     
     if grep -q '445/tcp' "$dire/nmap.txt" ||grep -q '139/tcp' "$dire/nmap.txt"; then
