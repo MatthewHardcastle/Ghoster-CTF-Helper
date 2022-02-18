@@ -1,7 +1,7 @@
 #!/bin/bash
-RCol='\e[0m'    # Text Reset
+RCol='\e[0m'    
 BBlu='\e[1;34m';
-#echo -e "${Blu}blue ${Red}red ${RCol}etc...."
+
 
 Full_Scan () {
     echo "Please enter the port to scan!"
