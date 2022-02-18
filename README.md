@@ -9,6 +9,6 @@ port 80 was found then it will attempt a directory bruteforce, which in this cas
 better tool as it uses multi thread therefore making the process faster! It will also run smbmap and enum4linux if the ports are available
 
 Requirements:
-*gobuster
-*smbmap
-*enum4linux
+- gobuster
+- smbmap
+- enum4linux
